@@ -3,7 +3,7 @@ resource "aws_instance" "demoinstance" {
   instance_type          = var.instance_type
   availability_zone      = var.availability_zone
   key_name               = var.key_name
-  subnet_id              = element(var.subnet_ids, 0)  # Select the first subnet ID
+  subnet_id              = element(var.subnet_ids, 1)  # Select the first subnet ID
   vpc_security_group_ids = [aws_security_group.example.id]
 
   tags = var.tags
